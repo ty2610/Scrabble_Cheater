@@ -1,0 +1,30 @@
+body {
+    background-image:url('./images/scrabble-bright.jpg');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.padTopContainer {
+    padding-top: 20px;
+}
+
+.inputBox {
+    width: 30%;
+    /*margin-bottom: 10px;
+    margin-right: 0px;*/
+    margin: 0 auto 10px auto;
+}
+
+.dynamicTable {
+    background-color: white;
+    width: 100%;
+}
+
+.submitButton {
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: white;
+}

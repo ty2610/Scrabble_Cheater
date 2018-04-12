@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="indexApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scrabble Cheater</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="index.css"/>
+    </head>
+    <body>
+    <div class="content_container padTopContainer">
+        <div class="container-fluid" ng-controller="IndexController">
+            <div class="row justify-content-center">
+                <div class="col-sm text-center">
+                    <div><h3>What letters do you have on your rack?</h3></div>
+                    <form ng-submit="submitLetters()">
+                        <input autocomplete="off" class="form-control inputBox" type="text" placeholder="Letters" id="letterInput">
+                    </form>
+                    <button class="submitButton" ng-click="submitLetters()">Simulate</button>
+                    <table class="table table-striped dynamicTable ng-cloak">
+                        <tr class="dynamicTableRow" ng-repeat="token in tokens" ng-hide="$index%3!==0">
+                            <td>
+                                <label>{{ tokens[$index].token}}</label>
+                            </td>
+                            <td ng-hide="!tokens[$index+1]">
+                                <label>{{ tokens[$index+1].token}}</label>
+                            </td>
+                            <td ng-hide="!tokens[$index+2]">
+                                <label>{{ tokens[$index+2].token}}</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
